@@ -12,7 +12,7 @@ function MenuLanding(){
     return(
     <>
 
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="menuLanding">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2">
@@ -32,7 +32,7 @@ function MenuLanding(){
                 <ChevronRight className="ml-2" />
               </button>
               <button 
-                // onClick={() => navigate('/cart')}
+                onClick={() =>  router.push("/pages/CartPage")}
                 className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-colors"
               >
                 Ordenar Ahora

@@ -27,10 +27,10 @@ function Header(){
 
                 <nav>
                     <ul className="hidden md:flex space-x-8 text-white ">
-                        <li className="hover:text-teal-300 transition-colors cursor-pointer">Inicio</li>
-                        <li className="hover:text-teal-300 transition-colors cursor-pointer">Menú</li>
-                        <li className="hover:text-teal-300 transition-colors cursor-pointer">Reservaciones</li>
-                        <li className="hover:text-teal-300 transition-colors cursor-pointer relative"> 
+                        <li className="hover:text-teal-300 transition-colors cursor-pointer" onClick={() =>  router.push("/")}>Inicio</li>
+                        <li className="hover:text-teal-300 transition-colors cursor-pointer" ><a href="#menuLanding">Menú</a></li>
+                        <li className="hover:text-teal-300 transition-colors cursor-pointer" ><a href="#reservaciones">Reservaciones</a></li>
+                        <li className="hover:text-teal-300 transition-colors cursor-pointer relative" onClick={() =>  router.push("/pages/CartPage")} > 
                             <ShoppingCart className="inline" />
                             {cartItemsCount > 0 && (
                                 <span className="absolute -top-2 -right-2 bg-coral-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">

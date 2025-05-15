@@ -10,7 +10,7 @@ function Landing(){
         <>
         <Hero/>
         <About/>
-        <MenuLanding/>
+        <MenuLanding />
         <Reservaciones/>
         </>
     )

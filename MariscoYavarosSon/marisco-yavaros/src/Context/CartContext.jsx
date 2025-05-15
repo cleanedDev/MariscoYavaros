@@ -11,23 +11,26 @@ const initialState = {
 
 const cartReducer = (state, action) => {
   switch (action.type) {
+    // 
     case 'ADD_ITEM': {
-      const existingItemIndex = state.items.findIndex(
-        (item) => item.id === action.payload.id
-      );
+  const existingItemIndex = state.items.findIndex(
+    (item) =>
+      item.id === action.payload.id &&
+      item.size === action.payload.size // Asegúrate de comparar por tamaño
+  );
 
-      if (existingItemIndex !== -1) {
-        const updatedItems = [...state.items];
-        updatedItems[existingItemIndex] = {
-          ...updatedItems[existingItemIndex],
-          quantity:
-            updatedItems[existingItemIndex].quantity + action.payload.quantity,
-        };
-        return { ...state, items: updatedItems };
-      } else {
-        return { ...state, items: [...state.items, action.payload] };
-      }
-    }
+  if (existingItemIndex !== -1) {
+    const updatedItems = [...state.items];
+    updatedItems[existingItemIndex] = {
+      ...updatedItems[existingItemIndex],
+      quantity:
+        updatedItems[existingItemIndex].quantity + action.payload.quantity,
+    };
+    return { ...state, items: updatedItems };
+  } else {
+    return { ...state, items: [...state.items, action.payload] };
+  }
+}
 
     case 'REMOVE_ITEM':
       return {
@@ -35,13 +38,22 @@ const cartReducer = (state, action) => {
         items: state.items.filter((item) => item.id !== action.payload),
       };
 
+    // case 'UPDATE_QUANTITY': {
+    //   const { id, quantity } = action.payload;
+    //   const updatedItems = state.items.map((item) =>
+    //     item.id === id ? { ...item, quantity } : item
+    //   );
+    //   return { ...state, items: updatedItems };
+    // }
     case 'UPDATE_QUANTITY': {
-      const { id, quantity } = action.payload;
-      const updatedItems = state.items.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      );
-      return { ...state, items: updatedItems };
+  const updatedItems = state.items.map(item => {
+    if (item.id === action.payload.id && item.size === action.payload.size) {
+      return { ...item, quantity: action.payload.quantity };
     }
+    return item;
+  });
+  return { ...state, items: updatedItems };
+}
 
     case 'SET_DELIVERY_TYPE':
       return { ...state, deliveryType: action.payload };
@@ -77,9 +89,15 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: 'REMOVE_ITEM', payload: id });
   };
 
-  const updateQuantity = (id, quantity) => {
-    dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
-  };
+  // const updateQuantity = (id, quantity) => {
+  //   dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
+  // };
+  const updateQuantity = (id, size, newQuantity) => {
+  dispatch({
+    type: 'UPDATE_QUANTITY',
+    payload: { id, size, quantity: newQuantity }
+  });
+};
 
   const setDeliveryType = (type) => {
     dispatch({ type: 'SET_DELIVERY_TYPE', payload: type });
