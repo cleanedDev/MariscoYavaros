@@ -48,6 +48,7 @@ function Header(){
                             <button 
                                  
                                 className="relative mr-4 text-white"
+                                onClick={() =>  router.push("/pages/CartPage")}
                             >
                                 <ShoppingCart />
                                 {cartItemsCount > 0 && (
@@ -72,9 +73,9 @@ function Header(){
             {isMenuOpen && (
                         <div className="md:hidden bg-blue-900 shadow-lg py-4 ">
                             <ul className="container mx-auto px-4 flex flex-col space-y-4 text-white">
-                                <li className="`py-2 hover:text-teal-300 transition-colors">Inicio</li>
-                                <li className="`py-2 hover:text-teal-300 transition-colors">Menu</li>
-                                <li className="`py-2 hover:text-teal-300 transition-colors">Reservaciones</li>
+                                <li className="`py-2 hover:text-teal-300 transition-colors" onClick={() =>  router.push("/")}>Inicio</li>
+                                <li className="`py-2 hover:text-teal-300 transition-colors"><a href="#menuLanding">Menú</a></li>
+                                <li className="`py-2 hover:text-teal-300 transition-colors"><a href="#reservaciones">Reservaciones</a></li>
                             </ul>
                         </div>
                 )}
