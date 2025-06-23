@@ -31,7 +31,7 @@ function MenuList({items}){
           <button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
-            className={`px-4 py-2 rounded-full transition-colors ${
+            className={` btn px-4 py-2 rounded-full transition-colors ${
               activeCategory === category.id
                 ? 'bg-blue-900 text-white'
                 : 'bg-gray-200 text-gray-800 hover:bg-gray-300'

@@ -39,7 +39,7 @@ function CartItem({item}) {
            onClick={() =>
     updateQuantity(item.id, item.size, Math.max(1, item.quantity - 1))
   }
-          className="text-gray-500 hover:text-gray-700 focus:outline-none"
+          className="btn text-gray-500 hover:text-gray-700 focus:outline-none"
         >
           <span className="px-2 py-1 border rounded-l border-gray-300">-</span>
         </button>
@@ -51,7 +51,7 @@ function CartItem({item}) {
            onClick={() =>
     updateQuantity(item.id, item.size, item.quantity + 1)
   }
-          className="text-gray-500 hover:text-gray-700 focus:outline-none"
+          className="btn text-gray-500 hover:text-gray-700 focus:outline-none"
         >
           <span className="px-2 py-1 border rounded-r border-gray-300">+</span>
         </button>
@@ -67,7 +67,7 @@ function CartItem({item}) {
       {/* Remove button */}
       <button 
         onClick={() => removeItem(item.id)}
-        className="ml-4 text-red-500 hover:text-red-700 focus:outline-none"
+        className=" btn ml-4 text-red-500 hover:text-red-700 focus:outline-none"
       >
         <Trash2 size={20} />
       </button>

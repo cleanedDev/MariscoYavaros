@@ -40,6 +40,7 @@ const MenuItem = ({ item }) => {
         <img
           src={item.image}
           alt={item.name}
+          loading="lazy"
           className={`w-auto h-full object-cover transition-transform duration-500 mx-auto ${isHovered ? 'scale-110' : 'scale-100'}`}
         />
         <div className="absolute bottom-0 left-0 bg-blue-900 text-white px-4 py-1 rounded-tr-lg">
@@ -71,14 +72,14 @@ const MenuItem = ({ item }) => {
           <div className="flex items-center border border-gray-300 rounded-md">
             <button
               onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100"
+              className=" btn px-3 py-1 text-gray-700 hover:bg-gray-100"
             >
               -
             </button>
             <span className="px-3 py-1">{quantity}</span>
             <button
               onClick={() => setQuantity(prev => prev + 1)}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100"
+              className=" btn px-3 py-1 text-gray-700 hover:bg-gray-100"
             >
               +
             </button>
@@ -86,7 +87,7 @@ const MenuItem = ({ item }) => {
 
           <button
             onClick={handleAddToCart}
-            className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md flex items-center transition-colors"
+            className="btn bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md flex items-center transition-colors"
           >
             <PlusCircle size={18} className="mr-1" />
             Agregar

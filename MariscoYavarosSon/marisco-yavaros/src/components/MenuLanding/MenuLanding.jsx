@@ -26,14 +26,14 @@ function MenuLanding(){
             <div className="flex flex-col sm:flex-row sm:justify-center gap-4 ">
               <button 
                 onClick={() =>  router.push("/pages/MenuPage")}
-                className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-colors"
+                className=" btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-colors"
               >
                 Ver Menú
                 <ChevronRight className="ml-2" />
               </button>
               <button 
                 onClick={() =>  router.push("/pages/CartPage")}
-                className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-colors"
+                className="btn bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-colors"
               >
                 Ordenar Ahora
                 <ChevronRight className="ml-2" />

@@ -44,3 +44,7 @@
   --color-coral-800: #990000;
   --color-coral-900: #7a0000;
 }
+
+.btn {
+    @apply cursor-pointer;
+  }

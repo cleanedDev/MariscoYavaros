@@ -36,7 +36,7 @@ const handleWhatsAppContact = (eventType) => {
               </p>
               <button 
                 onClick={() => handleWhatsAppContact('cumpleaños')}
-                className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full transition-colors"
+                className="btn bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full transition-colors"
               >
                 Reservar por WhatsApp
               </button>
@@ -59,7 +59,7 @@ const handleWhatsAppContact = (eventType) => {
               </p>
               <button 
                 onClick={() => handleWhatsAppContact('aniversario')}
-                className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full transition-colors"
+                className="btn bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full transition-colors"
               >
                 Reservar por WhatsApp
               </button>
@@ -82,7 +82,7 @@ const handleWhatsAppContact = (eventType) => {
               </p>
               <button 
                 onClick={() => handleWhatsAppContact('fiesta navideña')}
-                className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full transition-colors"
+                className="btn bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full transition-colors"
               >
                 Reservar por WhatsApp
               </button>
@@ -96,7 +96,7 @@ const handleWhatsAppContact = (eventType) => {
           </p>
           <button 
             onClick={() => handleWhatsAppContact('evento personalizado')}
-            className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition-colors"
+            className="btn bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.6 6.31a8.551 8.551 0 0 0-6.311-2.939 8.55 8.55 0 0 0-7.3 13.037l-1.289 4.162 4.287-1.109a8.54 8.54 0 0 0 4.3 1.162h.001a8.551 8.551 0 0 0 6.311-14.313Z"/>
